@@ -12,11 +12,26 @@ export class DetailsComponent {
   constructor(private movieService: MovieService) { }
 
   movie: Movie | undefined ;
+  trailerCode: string | undefined;
 
  @Input() id?: number;
 
   ngOnInit() {
     this.movie = this.movieService.getMovieById(this.id);
+
+    if (this.movie) {
+      this.trailerCode = this.extractVideoCode(this.movie.trailerLink);
+    }
   }
 
+  extractVideoCode(url: string): string {
+    const urlParams = new URLSearchParams(new URL(url).search);
+    return urlParams.get('v') || '';
+  }
+
+  onPlayerReady(event: any): void {
+    const player = event.target;
+    player.playVideo(); 
+  }
+  
 }
