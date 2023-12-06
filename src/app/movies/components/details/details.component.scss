@@ -1,0 +1,28 @@
+//------------------------------------------------------------------------------
+// Movies Details
+//------------------------------------------------------------------------------
+.movie-details {
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 10px;
+
+    h2 {
+        font-size: 32px;
+    }
+
+    img {
+        max-width: 300px;
+        max-height: 350px;
+        border-radius: 8px;
+    }
+
+    p {
+        font-size: 17px;
+    }
+
+}
+
+.error-message {
+    color: red;
+    font-size: 18px;
+    text-align: center;
+}

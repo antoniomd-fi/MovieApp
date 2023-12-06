@@ -1,1 +1,104 @@
-/* You can add global styles to this file, and also import other style files */
+@import '~bootstrap/dist/css/bootstrap.min.css';
+@import "~@fortawesome/fontawesome-free/css/all.min.css";
+
+$o-primary-white : #E9E9E9;
+
+//------------------------------------------------------------------------------
+// General
+//------------------------------------------------------------------------------
+
+
+body {
+    height: 100vh;
+    background-image: linear-gradient(rgba(5, 7, 12, 0.55), rgba(5, 7, 12, 0.55)), url(/assets/img/background.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+}
+
+.navbar {
+    position: sticky;
+    top: 0px;
+    z-index: 1;
+}
+
+//------------------------------------------------------------------------------
+// Movies Lists
+//------------------------------------------------------------------------------
+
+.container {
+    max-width: 1500px;
+    margin-top: 20px;
+    padding: 20px;
+
+    p {
+        font-size: 24px;
+    }
+
+    .card {
+        border: none;
+        transition: transform 0.2s;
+        max-width: 250px;
+
+        &:hover {
+            transform: scale(1.05);
+        }
+
+        .card-body {
+            text-align: center;
+
+            h5 {
+                font-size: 18px;
+                margin-top: 10px;
+            }
+
+            p {
+                font-size: 14px;
+            }
+        }
+
+        img {
+            width: 220px;
+            height: 300px;
+        }
+
+        .watchlist-badge {
+            color: $o-primary-white;
+            position: relative;
+            bottom: 290px;
+            left: 100px;
+
+        }
+
+        .info-badge {
+            color: $o-primary-white;
+            position: relative;
+            bottom: 290px;
+            right: 90px;
+        }
+
+        .info-badge-watchlist {
+            color: $o-primary-white;
+            position: relative;
+            bottom: 290px;
+            right: 90px;
+
+        }
+    }
+}
+
+.movie-details {
+    margin: 20px auto;
+}
+
+.card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 20px;
+}
+
+.error-message {
+    color: red;
+    font-size: 18px;
+}

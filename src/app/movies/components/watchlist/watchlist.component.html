@@ -1,0 +1,32 @@
+<div class="container mt-4">
+    <h3 class="mb-5">My Watchlist</h3>
+    <div *ngIf="watchlist.length">
+        <div class="my-2">
+            <button (click)="sortMovies('title')" class="btn btn-secondary me-2">Sort by Title</button>
+            <button (click)="sortMovies('releasedDate')" class="btn btn-secondary me-2">Sort by Release Date</button>
+          </div>
+          <div class="row mt-5">
+            <div *ngFor="let movie of watchlist" class="card col-xl-2 col-lg-3 col-sm-6 m-auto px-2">
+              <img class="card-img-top" [src]="movie.poster" alt="{{ movie.title }}" />
+              <div>
+                <a routerLink="/movie/{{ movie.id }}"><i class="fas fa-info-circle info-badge-watchlist" title="See details"></i></a>
+              </div>
+              <div class="card-body pt-0">
+                <div class="row">
+                    <h5 class="card-title">{{ movie.title }}</h5>
+                    <p class="card-text">{{ movie.releasedDate | date: 'mediumDate' }}</p>
+                </div>
+                <div class="row mt-2">
+                    <button (click)="removeFromWatchlist(movie)" class="btn btn-danger">Remove from Watchlist</button>
+                </div>
+              </div>
+            </div>
+          </div>
+    </div>
+    <div *ngIf="!watchlist.length" >
+        <div class="alert alert-danger" role="alert">
+            The watchlist is empty
+          </div>
+    </div>
+  </div>
+  

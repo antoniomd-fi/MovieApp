@@ -1,0 +1,16 @@
+<div *ngIf="movie" class="movie-details row py-2 w-75">
+  <div>
+    <h2>{{ movie.title }}</h2>
+    <img [src]="movie.poster" alt="{{ movie.title }}" />
+    <p>{{ movie.description }}</p>
+    <p>Rating: {{ movie.rating }}</p>
+    <p>Duration: {{ movie.duration }}</p>
+    <p>Genre: {{ movie.genre.join(', ') }}</p>
+    <p>Released Date: {{ movie.releasedDate | date: 'mediumDate' }}</p>
+    <a [href]="movie.trailerLink" target="_blank" class="btn btn-danger">Watch Trailer</a>
+  </div>
+  </div>
+  <div *ngIf="!movie" class="error-message">
+    <p>Error: Movie not found</p>
+  </div>
+  
